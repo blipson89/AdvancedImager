@@ -13,14 +13,12 @@ namespace AdvancedImager.Commands
 		{
 			if (context.Items.Length != 1)
 				return;
-			Item obj = context.Items[0];
+			Item contextItem = context.Items[0];
 			var urlString = new UrlString();
-			urlString.Append("sc_content", obj.Database.Name);
-			urlString.Append("id", obj.ID.ToString());
-			urlString.Append("la", obj.Language.ToString());
-			urlString.Append("vs", obj.Version.ToString());
-			if (!string.IsNullOrEmpty(context.Parameters["frameName"]))
-				urlString.Add("pfn", context.Parameters["frameName"]);
+			urlString.Append("sc_content", contextItem.Database.Name);
+			urlString.Append("id", contextItem.ID.ToString());
+			urlString.Append("la", contextItem.Language.ToString());
+			urlString.Append("vs", contextItem.Version.ToString());
 			Sitecore.Shell.Framework.Windows.RunApplication("Media/AdvancedImager", urlString.ToString());
 		}
 	}

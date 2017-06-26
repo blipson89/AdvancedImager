@@ -20,9 +20,12 @@ namespace AdvancedImager.Codebehinds
 		private Scrollbox _crops;
 		private Literal _selectedCropLink;
 		private static IDictionary<Guid, Item> CropItems => Client.CoreDatabase.GetItem("/sitecore/content/Applications/Media/AdvancedImager/Crops").Children.ToDictionary(k => k.ID.Guid);
+		public CropsPanel(Item button, CommandContext context) : base(button, context)
+		{
+		}
 		protected override void Render(HtmlTextWriter writer)
 		{
-			var mainControl = ControlFactory.GetControl("AdvancedImager.Crops") as XmlControl;
+			var mainControl = ControlFactory.GetControl(Constants.CropsControlName) as XmlControl;
 			Assert.IsNotNull(mainControl, "mainControl"); // ReSharper disable once PossibleNullReferenceException
 
 			_crops = mainControl["Crops"] as Scrollbox;
@@ -46,13 +49,13 @@ namespace AdvancedImager.Codebehinds
 		{
 			Guid cropId;
 			var text = "(None)";
-			if (Guid.TryParse(CommandContext.Parameters["CropID"], out cropId))
+			if (Guid.TryParse(CommandContext.Parameters[Constants.CropId], out cropId))
 			{
 				text = CropItems[cropId].GetUIDisplayName();
 			}
 			
 			
-			string str1 = HttpUtility.HtmlEncode($"javascript:scForm.postEvent(this,event,'advimager:openmenu()')");
+			string str1 = HttpUtility.HtmlEncode("javascript:scForm.postEvent(this,event,'advimager:openmenu()')");
 			var tag = new StringBuilder();
 			tag.Append("<a ");
 			tag.Append("class='scEditorHeaderVersionsLanguage scEditorHeaderButton scButton'");
@@ -65,19 +68,15 @@ namespace AdvancedImager.Codebehinds
 			_selectedCropLink.Text = tag.ToString();
 		}
 
-		public CropsPanel(Item button, CommandContext context) : base(button, context)
-		{
-		}
-
 		private void AddControl(Item crop)
 		{
-			string description = crop.Fields["Crop Purpose"].Value;
+			string description = crop.Fields[Constants.CropPurposeField].Value;
 			AddControl(crop.GetUIDisplayName(), description, $"advimager:setcrop(id={crop.ID})");
 		}
 
 		private void AddControl(string header, string description, string clickEvent)
 		{
-			var control = ControlFactory.GetControl("AdvancedImager.Crops.Options") as XmlControl;
+			var control = ControlFactory.GetControl(Constants.CropsOptionsControlName) as XmlControl;
 			Assert.IsNotNull(control, typeof(XmlControl)); // ReSharper disable once AssignNullToNotNullAttribute
 			_crops.Controls.Add(control);
 

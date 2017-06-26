@@ -21,6 +21,7 @@ namespace AdvancedImager.Codebehinds
 		protected Sitecore.Web.UI.HtmlControls.Input CropInfo;
 		protected Sitecore.Web.UI.HtmlControls.Input CropMimeType;
 		protected Sitecore.Web.UI.HtmlControls.Input CropSize;
+		private const string RibbonPath = "/sitecore/content/Applications/Media/AdvancedImager/Ribbon";
 		public override void HandleMessage(Message message)
 		{
 			Error.AssertObject(message, "message");
@@ -58,7 +59,7 @@ namespace AdvancedImager.Codebehinds
 			Item crop = Client.CoreDatabase.GetItem(CropSize.Value);
 			if (crop != null)
 			{
-				string ratio = crop.Fields["Crop Ratio"].Value;
+				string ratio = crop.Fields[Constants.CropRatioField].Value;
 				SheerResponse.Eval($"setAspectRatio('{ratio}');");
 			}
 			else
@@ -75,7 +76,7 @@ namespace AdvancedImager.Codebehinds
 			var context = new CommandContext(parent);
 			string imageData = CropInfo.Value;
 			string base64Data = Regex.Match(imageData, @"data:image/(?<type>.+?),(?<data>.+)").Groups["data"].Value;
-			context.Parameters["Base64Data"] = base64Data;
+			context.Parameters[Constants.Base64Data] = base64Data;
 			return context;
 		}
 
@@ -105,18 +106,18 @@ namespace AdvancedImager.Codebehinds
 
 		private void UpdateRibbon()
 		{
-			Ribbon ribbon = new Ribbon {ID = "AdvImagerRibbon"};
-			Item obj1 = null;
+			var ribbon = new Ribbon {ID = "AdvImagerRibbon"};
+			Item contextItem = null;
 			if (!string.IsNullOrEmpty(ItemID))
-				obj1 = Context.ContentDatabase.GetItem(ItemID);
-			ribbon.CommandContext = new CommandContext(obj1);
+				contextItem = Context.ContentDatabase.GetItem(ItemID);
+			ribbon.CommandContext = new CommandContext(contextItem);
 			ribbon.ShowContextualTabs = false;
 			ribbon.CommandContext.Parameters["HasFile"] = HasFile.Disabled ? "0" : "1";
-			ribbon.CommandContext.Parameters["CropSize"] = CropSize.Value;
-			ribbon.CommandContext.Parameters["CropID"] = CropSize.Value;
-			Item obj2 = Context.Database.GetItem("/sitecore/content/Applications/Media/AdvancedImager/Ribbon");
-			Error.AssertItemFound(obj2, "/sitecore/content/Applications/Media/AdvancedImager/Ribbon");
-			ribbon.CommandContext.RibbonSourceUri = obj2.Uri;
+			ribbon.CommandContext.Parameters[Constants.CropSize] = CropSize.Value;
+			ribbon.CommandContext.Parameters[Constants.CropId] = CropSize.Value;
+			Item ribbonItem = Context.Database.GetItem(RibbonPath);
+			Error.AssertItemFound(ribbonItem, RibbonPath);
+			ribbon.CommandContext.RibbonSourceUri = ribbonItem.Uri;
 			RibbonPanel.InnerHtml = HtmlUtil.RenderControl(ribbon);
 			SheerResponse.Eval("initEventListeners();");
 		}

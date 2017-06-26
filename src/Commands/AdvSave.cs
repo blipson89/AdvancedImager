@@ -19,22 +19,20 @@ namespace AdvancedImager.Commands
 		public override void Execute(CommandContext context)
 		{
 			Assert.ArgumentNotNull(context, "context");
-			if (context.Items.Length == 1)
+			if (context.Items.Length != 1) return;
+			MediaItem parentItem = context.Items[0];
+			try
 			{
-				MediaItem parentItem = context.Items[0];
-				try
-				{
-					Save(parentItem, context.Parameters["Base64Data"]);
-					SheerResponse.Alert("The image has been saved.");
-					Context.ClientPage.Modified = false;
+				Save(parentItem, context.Parameters[Constants.Base64Data]);
+				SheerResponse.Alert("The image has been saved.");
+				Context.ClientPage.Modified = false;
 
-				}
-				catch (Exception ex)
-				{
-					Log.Error(ex.Message, ex, this);
-					SheerResponse.Alert("The image could not be saved.");
+			}
+			catch (Exception ex)
+			{
+				Log.Error(ex.Message, ex, this);
+				SheerResponse.Alert("The image could not be saved.");
 
-				}
 			}
 		}
 
