@@ -1,0 +1,12 @@
+#AspectRatio > label img[src='/sitecore/images/blank.gif'] {
+    display: none;
+}
+#AspectRatio > label {
+    display: block;
+}
+#Input_AspectRatio{
+    min-height: 1.5rem;
+}
+.previewRibbon{
+    background-color: #f7f7f7;
+}

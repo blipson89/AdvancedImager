@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>82c05f5e-fa06-4d5a-97c8-be8e58ee4d13</ProjectGuid>
+    <ProjectGuid>{82C05F5E-FA06-4D5A-97C8-BE8E58EE4D13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AdvancedImager</RootNamespace>
@@ -30,23 +30,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Sitecore.Client, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Client.NoReferences.8.2.170407\lib\NET452\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.2.170407\lib\NET452\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Web, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Web.NoReferences.8.2.170407\lib\NET452\Sitecore.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Codebehinds\AdvImagerForm.cs" />
+    <Compile Include="Codebehinds\CropsPanel.cs" />
+    <Compile Include="Commands\AdvancedEdit.cs" />
+    <Compile Include="Commands\AdvEditImage.cs" />
+    <Compile Include="Commands\AdvSave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Config\zzFeature\Feature.AdvancedImager.config" />
+    <None Include="App_Config\zzFeature\Feature.AdvancedImager.Items.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager Crops.Options.xml" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager Crops.xml" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.css" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.js" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.xml" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\cropper.min.css" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\cropper.min.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

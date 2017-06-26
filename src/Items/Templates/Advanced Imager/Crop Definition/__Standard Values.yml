@@ -1,0 +1,21 @@
+﻿---
+ID: "d18b3a9c-49e5-4059-a0ef-817a4e8cfd31"
+Parent: "8b1d944d-5cce-4c30-9964-16bf4391702c"
+Template: "8b1d944d-5cce-4c30-9964-16bf4391702c"
+Path: /sitecore/templates/Advanced Imager/Crop Definition/__Standard Values
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170607T191711Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\blipson
+    - ID: "d4c73315-b86e-4110-b47d-e03e79b84656"
+      Hint: Crop Purpose
+      Value: $name

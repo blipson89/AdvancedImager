@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:shell="http://www.sitecore.net/shell">
+  <AdvancedImager.Crops>
+    <Border style="padding: 17px 0 0 0">
+
+      <style>
+        .scMenuPanelItem, .scMenuPanelItem_Hover, .scMenuPanelItemSelected_Hover, .scMenuPanelItemSelected {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        }
+        .scGalleryGrip {
+        position: absolute;
+        bottom: 1px;
+        left: 1px;
+        right: 1px;
+        height: 10px;
+        }
+        .scLanguagesGalleryMenu {
+        overflow: hidden;
+        vertical-align: top;
+        border-bottom: 12px solid transparent;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-collapse: separate;
+        }
+        div#Crops img {
+        display: none;
+        }
+
+        #Crops{
+          height: auto !important;
+          position: absolute;
+          z-index: 1;
+          min-width: 250px;
+          margin-top:7px;
+          display: none;
+          background-color: #f7f7f7;
+          border: 1px solid #bdbdbd;
+        }
+
+        #Crops.active{
+          display: block;
+        }
+      </style>
+
+      <div class="scStretch">
+      <Border Width="100%" Height="100%" style="position: relative;">
+        <Literal ID="SelectedCrop" />
+        <Scrollbox ID="Crops" class="fffff" style="padding-top:0 !important; overflow-x: hidden; max-height: 400px;"/>
+      </Border>
+      </div>
+    </Border>
+  </AdvancedImager.Crops>
+</control>

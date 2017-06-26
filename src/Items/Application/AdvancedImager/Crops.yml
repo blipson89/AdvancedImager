@@ -1,0 +1,18 @@
+﻿---
+ID: "9b02cf64-951b-42b5-a1be-6b8d871f6326"
+Parent: "1c87e211-d2a2-442b-bac4-4b6fdb53c916"
+Template: "a19aa50e-bf5f-4864-a407-c4c5a442db8d"
+Path: /sitecore/content/Applications/Media/AdvancedImager/Crops
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170607T185234Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\blipson

@@ -1,0 +1,105 @@
+﻿---
+ID: "4fe44385-22bb-47d0-8339-aba6b2b29cad"
+Parent: "9e57e152-3481-4bb3-9827-e16254404674"
+Template: "79e55cb1-fdb0-460a-ab97-b629069f15da"
+Path: /sitecore/content/Applications/Media/AdvancedImager/Toolbar/Undo
+DB: core
+BranchID: "593dca58-5a88-4464-b2c9-a63dd5ce39a4"
+SharedFields:
+- ID: "0a9ec22e-c3c1-42e4-875d-c31aeaf28216"
+  Hint: Icon
+  Value: Applications/24x24/Undo.png
+- ID: "46bd0edb-25fa-49b3-8271-ab0130a59150"
+  Hint: Action
+  Value: HasFile
+- ID: "95dce7f7-107b-4e53-be87-f16e707a5d3f"
+  Hint: Click
+  Value: Undo
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 20
+- ID: "ed097c2e-5cd6-44b5-b71b-188eabd9f167"
+  Hint: ID
+  Value: UndoButton
+Languages:
+- Language: da
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Fortryd den sidste ændring
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Fortryd
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T125644Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Fortryd den sidste ændring
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Letzte Änderung rückgängig machen
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Rückgängig
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T130606Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Letzte Änderung rückgängig machen
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Undo the Last Change
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0243b5ca-1a92-4093-9ead-b4f7b8ad2594"
+      Hint: Header
+      Value: 
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Undo the Last Change
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: 最後の変更を元に戻します
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 元に戻す
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T131258Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: 最後の変更を元に戻します
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

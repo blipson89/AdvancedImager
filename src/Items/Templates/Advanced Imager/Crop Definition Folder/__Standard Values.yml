@@ -1,0 +1,23 @@
+﻿---
+ID: "cab0db8f-eac4-493c-bf00-3ac025c1392a"
+Parent: "a19aa50e-bf5f-4864-a407-c4c5a442db8d"
+Template: "a19aa50e-bf5f-4864-a407-c4c5a442db8d"
+Path: /sitecore/templates/Advanced Imager/Crop Definition Folder/__Standard Values
+DB: core
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: tree list
+  Value: "{8B1D944D-5CCE-4C30-9964-16BF4391702C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170607T191438Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\blipson

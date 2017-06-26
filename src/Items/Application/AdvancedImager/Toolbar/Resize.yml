@@ -1,0 +1,108 @@
+﻿---
+ID: "0aa19210-92e8-4ebf-836a-baa62e548340"
+Parent: "9e57e152-3481-4bb3-9827-e16254404674"
+Template: "79e55cb1-fdb0-460a-ab97-b629069f15da"
+Path: /sitecore/content/Applications/Media/AdvancedImager/Toolbar/Resize
+DB: core
+BranchID: "593dca58-5a88-4464-b2c9-a63dd5ce39a4"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Imaging/24x24/scale.png
+- ID: "0a9ec22e-c3c1-42e4-875d-c31aeaf28216"
+  Hint: Icon
+  Value: Imaging/24x24/scale.png
+- ID: "46bd0edb-25fa-49b3-8271-ab0130a59150"
+  Hint: Action
+  Value: HasFile
+- ID: "95dce7f7-107b-4e53-be87-f16e707a5d3f"
+  Hint: Click
+  Value: "imager:resize"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 90
+- ID: "ed097c2e-5cd6-44b5-b71b-188eabd9f167"
+  Hint: ID
+  Value: ResizeToolbutton
+Languages:
+- Language: da
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Juster størrelse
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Juster størrelse
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T125743Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Juster billedstørrelse
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Größe ändern
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Größe ändern
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T130722Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Bildgröße ändern
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: Resize
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0243b5ca-1a92-4093-9ead-b4f7b8ad2594"
+      Hint: Header
+      Value: 
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: Resize the Image
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: サイズ変更
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: サイズ変更
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170407T131359Z
+    - ID: "49b67f65-b00e-47e4-ae41-04ed250bd614"
+      Hint: Tool tip
+      Value: 画像のサイズを変更します
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
