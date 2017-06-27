@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
 using Sitecore;
@@ -20,19 +21,39 @@ namespace AdvancedImager.Commands
 		{
 			Assert.ArgumentNotNull(context, "context");
 			if (context.Items.Length != 1) return;
-			MediaItem parentItem = context.Items[0];
+			var parameters = new NameValueCollection
+			{
+				["Items"] = SerializeItems(context.Items),
+				[Constants.Base64Data] = context.Parameters[Constants.Base64Data]
+			};
+			Context.ClientPage.Start(this, "Run", parameters);
+		}
+
+		protected void Run(ClientPipelineArgs args)
+		{
+			Item[] items = DeserializeItems(args.Parameters["Items"]);
+			MediaItem parentItem = items[0];
+			string imageData = args.Parameters[Constants.Base64Data];
+
+			if (!args.IsPostBack)
+			{
+				SheerResponse.Confirm("Are you sure you'd like to overwrite this item?");
+				args.WaitForPostBack();
+				return;
+			}
+
 			try
 			{
-				Save(parentItem, context.Parameters[Constants.Base64Data]);
+				if (args.IsPostBack && args.Result != "yes") return;
+
+				Save(parentItem, imageData);
 				SheerResponse.Alert("The image has been saved.");
 				Context.ClientPage.Modified = false;
-
 			}
 			catch (Exception ex)
 			{
 				Log.Error(ex.Message, ex, this);
 				SheerResponse.Alert("The image could not be saved.");
-
 			}
 		}
 
