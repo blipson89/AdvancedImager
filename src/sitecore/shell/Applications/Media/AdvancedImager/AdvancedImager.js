@@ -7,7 +7,7 @@ function setAspectRatio(ratio){
     }
     
     cropbox.setAspectRatio(Number(result[1]) / Number(result[2]));
-    document.getElementById('hidAspectRatio').value = ratio;
+    document.getElementById('CropRatio').value = ratio;
 }
 
 function initEventListeners(){

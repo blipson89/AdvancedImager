@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdvancedImager
+﻿namespace AdvancedImager
 {
 	public class Constants
 	{
@@ -13,7 +7,7 @@ namespace AdvancedImager
 
 		public const string CropId = "CropID";
 		public const string Base64Data = "Base64Data";
-		public const string CropSize = "CropSize";
+		public const string CropRatio = "CropRatio";
 
 		public const string CropPurposeField = "Crop Purpose";
 		public const string CropRatioField = "Crop Ratio";

@@ -17,8 +17,8 @@
       <CodeBeside Type="AdvancedImager.Codebehinds.AdvImagerForm, AdvancedImager"/>
       <Edit id="CropInfo" name="CropInfo" Hidden="true" />
       <Edit id="CropMimeType" name="CropMimeType" Hidden="true" />
-      <Edit id="CropSize" name="CropSize" Hidden="true" />
-      <input type="hidden" id="hidAspectRatio" value="none" />
+      <Edit id="CropId" name="CropId" Hidden="true" />
+      <Edit id="CropRatio" name="CropRatio" Hidden="true" value="none" />
       
       <Action ID="HasFile" Disabled="true"/>
 

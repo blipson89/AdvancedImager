@@ -1,0 +1,18 @@
+﻿---
+ID: "102d6768-871b-4769-b09b-05d72873281c"
+Parent: "c5604144-07ef-4b82-b36b-426597062a39"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/Applications/Media/AdvancedImager/Menues/Save
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170626T165026Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\blipson

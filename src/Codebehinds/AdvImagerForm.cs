@@ -20,7 +20,8 @@ namespace AdvancedImager.Codebehinds
 	{
 		protected Sitecore.Web.UI.HtmlControls.Input CropInfo;
 		protected Sitecore.Web.UI.HtmlControls.Input CropMimeType;
-		protected Sitecore.Web.UI.HtmlControls.Input CropSize;
+		protected Sitecore.Web.UI.HtmlControls.Input CropId;
+		protected Sitecore.Web.UI.HtmlControls.Input CropRatio;
 		private const string RibbonPath = "/sitecore/content/Applications/Media/AdvancedImager/Ribbon";
 		public override void HandleMessage(Message message)
 		{
@@ -29,6 +30,7 @@ namespace AdvancedImager.Codebehinds
 			{
 				case "item:save":
 				case "advimager:save":
+				case "advimager:createcrop":
 					CommandContext context = GetSaveContext(message);
 					message = Message.Parse(this, message.ToString().Replace("item:save", "advimager:save"));
 					Dispatcher.Dispatch(message, context);
@@ -54,16 +56,18 @@ namespace AdvancedImager.Codebehinds
 
 		private void HandleSetCrop(Message message)
 		{
-			CropSize.Value = message.Arguments["id"];
+			CropId.Value = message.Arguments["id"];
 			UpdateRibbon();
-			Item crop = Client.CoreDatabase.GetItem(CropSize.Value);
+			Item crop = Client.CoreDatabase.GetItem(CropId.Value);
 			if (crop != null)
 			{
 				string ratio = crop.Fields[Constants.CropRatioField].Value;
+				CropRatio.Value = ratio;
 				SheerResponse.Eval($"setAspectRatio('{ratio}');");
 			}
 			else
 			{
+				CropRatio.Value = "none";
 				SheerResponse.Eval("setAspectRatio();");
 			}
 		}
@@ -74,6 +78,8 @@ namespace AdvancedImager.Codebehinds
 			string version = WebUtil.GetQueryString("vs");
 			MediaItem parent = GetMediaItem(ItemID, Language.Parse(language), Version.Parse(version));
 			var context = new CommandContext(parent);
+			context.Parameters[Constants.CropRatio] = CropRatio.Value;
+			context.Parameters[Constants.CropId] = CropId.Value;
 			string imageData = CropInfo.Value;
 			string base64Data = Regex.Match(imageData, @"data:image/(?<type>.+?),(?<data>.+)").Groups["data"].Value;
 			context.Parameters[Constants.Base64Data] = base64Data;
@@ -113,8 +119,8 @@ namespace AdvancedImager.Codebehinds
 			ribbon.CommandContext = new CommandContext(contextItem);
 			ribbon.ShowContextualTabs = false;
 			ribbon.CommandContext.Parameters["HasFile"] = HasFile.Disabled ? "0" : "1";
-			ribbon.CommandContext.Parameters[Constants.CropSize] = CropSize.Value;
-			ribbon.CommandContext.Parameters[Constants.CropId] = CropSize.Value;
+			ribbon.CommandContext.Parameters[Constants.CropRatio] = CropRatio.Value;
+			ribbon.CommandContext.Parameters[Constants.CropId] = CropId.Value;
 			Item ribbonItem = Context.Database.GetItem(RibbonPath);
 			Error.AssertItemFound(ribbonItem, RibbonPath);
 			ribbon.CommandContext.RibbonSourceUri = ribbonItem.Uri;
