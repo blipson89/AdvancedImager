@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using AdvancedImager.Utility;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
@@ -46,7 +47,7 @@ namespace AdvancedImager.Commands
 			{
 				if (args.IsPostBack && args.Result != "yes") return;
 
-				Save(parentItem, imageData);
+				Saver.SaveOverwrite(parentItem, imageData);
 				SheerResponse.Alert("The image has been saved.");
 				Context.ClientPage.Modified = false;
 			}
@@ -54,17 +55,6 @@ namespace AdvancedImager.Commands
 			{
 				Log.Error(ex.Message, ex, this);
 				SheerResponse.Alert("The image could not be saved.");
-			}
-		}
-
-		protected virtual void Save(MediaItem parent, string imageData)
-		{
-			byte[] binData = Convert.FromBase64String(imageData);
-			using (var stream = new MemoryStream(binData))
-			using (Image image = Image.FromStream(stream))
-			{
-				var media = MediaManager.GetMedia(parent) as ImageMedia;
-				media?.SetImage(image);
 			}
 		}
 

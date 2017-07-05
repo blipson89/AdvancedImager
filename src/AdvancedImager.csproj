@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\LegendaryPancake\website\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -57,11 +57,16 @@
     <Compile Include="Commands\AdvEditImage.cs" />
     <Compile Include="Commands\AdvSave.cs" />
     <Compile Include="Commands\CreateCropItem.cs" />
+    <Compile Include="Commands\SaveAs.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Pipelines\AdvImagerSaveAs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Saver.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\zzFeature\Feature.AdvancedImager.config" />
+    <None Include="App_Config\zzFeature\Feature.AdvancedImager.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App_Config\zzFeature\Feature.AdvancedImager.Items.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -70,7 +75,9 @@
     <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager Crops.xml" />
     <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.css" />
     <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.js" />
-    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.xml" />
+    <Content Include="sitecore\shell\Applications\Media\AdvancedImager\AdvancedImager.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="sitecore\shell\Applications\Media\AdvancedImager\cropper.min.css" />
     <Content Include="sitecore\shell\Applications\Media\AdvancedImager\cropper.min.js" />
   </ItemGroup>

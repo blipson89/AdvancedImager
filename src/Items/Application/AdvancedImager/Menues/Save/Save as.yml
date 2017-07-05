@@ -1,25 +1,22 @@
 ﻿---
-ID: "0de13391-cf4d-4e65-a6b2-7900d844d031"
+ID: "6df7f39e-b2bf-481e-9df5-57ab765dcedb"
 Parent: "102d6768-871b-4769-b09b-05d72873281c"
 Template: "998b965e-6ab8-4568-810f-8101d60d0cc3"
-Path: /sitecore/content/Applications/Media/AdvancedImager/Menues/Save/Overwrite
+Path: /sitecore/content/Applications/Media/AdvancedImager/Menues/Save/Save as
 DB: core
 SharedFields:
 - ID: "335c6760-6c0e-4c6c-814c-a53d203f553e"
   Hint: Icon
   Value: Office/32x32/save_as.png
-- ID: "6516b18c-7103-422d-b4f1-b1e37c3d9a22"
-  Hint: Action
-  Value: 
 - ID: "cab694fc-e37c-44eb-9012-488b775cf638"
   Hint: Message
-  Value: "advimager:save"
+  Value: "advimager:saveas"
 Languages:
 - Language: en
   Fields:
   - ID: "9b72a62b-2775-423d-b17a-ec34a9f31af8"
     Hint: Display name
-    Value: Overwrite
+    Value: Save as...
   Versions:
   - Version: 1
     Fields:

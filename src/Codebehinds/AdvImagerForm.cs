@@ -26,13 +26,14 @@ namespace AdvancedImager.Codebehinds
 		public override void HandleMessage(Message message)
 		{
 			Error.AssertObject(message, "message");
+			CommandContext context = GetSaveContext(message);
+			message = Message.Parse(this, message.ToString().Replace("item:save", "advimager:save"));
 			switch (message.Name)
 			{
 				case "item:save":
 				case "advimager:save":
 				case "advimager:createcrop":
-					CommandContext context = GetSaveContext(message);
-					message = Message.Parse(this, message.ToString().Replace("item:save", "advimager:save"));
+				case "advimager:saveas":
 					Dispatcher.Dispatch(message, context);
 					break;
 				case "advimager:openmenu":

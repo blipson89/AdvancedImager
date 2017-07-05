@@ -27,6 +27,11 @@ function initEventListeners(){
 
 function initializeCropper(){
     var image = scForm.browser.getControl("Image");
+    var getCropInfo = function(e){ 
+        var cropinfo = document.getElementById("CropInfo");
+        var mimeType = document.getElementById("CropMimeType").value;
+        cropinfo.value = cropbox.getCroppedCanvas().toDataURL(mimeType);
+    };
     this.cropbox = new Cropper(image, { 
         viewMode: 1, 
         dragMode: 'move',
@@ -34,17 +39,15 @@ function initializeCropper(){
         ready: function(e,y){
             initEventListeners();
             cropbox.zoomTo(1);
+            getCropInfo();
         },
         cropend: function() {
             scForm.modified = true;
         }
     });
-    image.addEventListener('crop', function(e){ 
-        var cropinfo = document.getElementById("CropInfo");
-        var mimeType = document.getElementById("CropMimeType").value;
-        cropinfo.value = cropbox.getCroppedCanvas().toDataURL(mimeType);
-    });
     
+    image.addEventListener('crop', getCropInfo);
+    console.log('cache busted-a');
 }
 
 scForm.browser.attachEvent(window, "onload", initializeCropper);

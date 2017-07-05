@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.IO;
+using AdvancedImager.Utility;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using Sitecore.Data.Templates;
 using Sitecore.Diagnostics;
-using Sitecore.Resources.Media;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
-using Convert = System.Convert;
 
 namespace AdvancedImager.Commands
 {
@@ -37,7 +35,7 @@ namespace AdvancedImager.Commands
 			string cropRatio = args.Parameters[Constants.CropRatio];
 			string imageData = args.Parameters[Constants.Base64Data];
 
-			if (!args.IsPostBack && IsOverwrite(parentItem, cropRatio))
+			if (!args.IsPostBack && Saver.IsOverwrite(parentItem, cropRatio))
 			{
 				SheerResponse.Confirm("The selected crop already exists. Overwrite?");
 				args.WaitForPostBack();
@@ -48,7 +46,7 @@ namespace AdvancedImager.Commands
 			{
 				if (args.IsPostBack && args.Result != "yes") return;
 
-				Save(parentItem, imageData, cropRatio);
+				Saver.Save(parentItem, imageData, cropRatio);
 				SheerResponse.Alert("The image has been saved.");
 				Context.ClientPage.Modified = false;
 			}
@@ -56,41 +54,10 @@ namespace AdvancedImager.Commands
 			{
 				Log.Error(ex.Message, ex, this);
 				SheerResponse.Alert("The image could not be saved.");
-
 			}
 		}
 
-		private static bool IsOverwrite(Item parent, string cropRatio)
-		{
-			return parent.Database.GetItem(GetDestination(parent, cropRatio)) != null;
-		}
-
-		private static string GetDestination(Item parent, string cropRatio)
-		{
-			return $"{parent.Paths.FullPath}/{GetFilename(parent, cropRatio)}";
-		}
-
-		private static string GetFilename(Item parent, string cropRatio)
-		{
-			return $"{parent.Name}_{cropRatio.Replace(":","_")}";
-		}
-
-		protected virtual void Save(MediaItem parent, string imageData, string cropRatio)
-		{
-			byte[] binData = Convert.FromBase64String(imageData);
-			using (var stream = new MemoryStream(binData))
-			{
-				
-				MediaCreatorOptions options = MediaCreatorOptions.Empty;
-				options.AlternateText = parent.Alt;
-				options.Database = parent.Database;
-				options.Destination = GetDestination(parent, cropRatio);
-				options.IncludeExtensionInItemName = false;
-				options.OverwriteExisting = true;
-
-				MediaManager.Creator.CreateFromStream(stream, $"{GetFilename(parent, cropRatio)}.{parent.Extension}", options);
-			}
-		}
+		
 
 		public override CommandState QueryState(CommandContext context)
 		{
