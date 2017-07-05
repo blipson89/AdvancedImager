@@ -8,6 +8,7 @@ using System.Web.UI;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Shell;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Shell.Web.UI.WebControls;
 using Sitecore.Web.UI.HtmlControls;
@@ -51,7 +52,7 @@ namespace AdvancedImager.Codebehinds
 			var text = "(None)";
 			if (Guid.TryParse(CommandContext.Parameters[Constants.CropId], out cropId))
 			{
-				text = CropItems[cropId].GetUIDisplayName();
+				text = GetUiDisplayName(CropItems[cropId]);
 			}
 			
 			
@@ -71,7 +72,7 @@ namespace AdvancedImager.Codebehinds
 		private void AddControl(Item crop)
 		{
 			string description = crop.Fields[Constants.CropPurposeField].Value;
-			AddControl(crop.GetUIDisplayName(), description, $"advimager:setcrop(id={crop.ID})");
+			AddControl(GetUiDisplayName(crop), description, $"advimager:setcrop(id={crop.ID})");
 		}
 
 		private void AddControl(string header, string description, string clickEvent)
@@ -86,5 +87,11 @@ namespace AdvancedImager.Codebehinds
 			control["ClassName"] = "scMenuPanelItem";
 		}
 
+		private static string GetUiDisplayName(Item item)
+		{
+			if (UserOptions.View.UseDisplayName)
+				return item.DisplayName;
+			return item.Name;
+		}
 	}
 }
