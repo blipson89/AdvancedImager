@@ -1,0 +1,139 @@
+<project>
+  <Metadata>
+    <metadata>
+      <PackageName>Advanced Imager</PackageName>
+      <Author>Ben Lipson</Author>
+      <Version>0.1</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme>After installing, navigate to /sitecore/content/Applications/Media/AdvancedImager/Crops and create some crops</Readme>
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/core/sitecore/content/Applications/Content Editor/Ribbons/Contextual Ribbons/Images/Media/Image/Advanced Edit/{57802F30-1C9B-481C-BAD4-2574B96EEC15}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Dialogs/Advanced Imager Save as/{0E70F75C-8C70-4B1C-B945-F58A04F427A5}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/{1C87E211-D2A2-442B-BAC4-4B6FDB53C916}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Crops/{9B02CF64-951B-42B5-A1BE-6B8D871F6326}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Menues/{C5604144-07EF-4B82-B36B-426597062A39}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Menues/Save/{102D6768-871B-4769-B09B-05D72873281C}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Menues/Save/Overwrite/{0DE13391-CF4D-4E65-A6B2-7900D844D031}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Menues/Save/Save as/{6DF7F39E-B2BF-481E-9DF5-57AB765DCEDB}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/{C463EEBC-7C0F-4CBD-BC81-79C57BCE423A}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/{828C4666-9CD7-40A4-B015-001C399CF1CE}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Crop For/{00FB2C77-A54D-46BA-A2C8-5BF9E27ACFFA}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Crop For/Crop Sizes/{0E25F420-DDF6-442A-8A2C-7AC083EAF3CA}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Flip/{43621E22-2542-4EC9-BC0B-A08552EAD3D7}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Flip/Flip Horizontal/{01106669-42B3-467D-BDE0-D957E1A14157}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Flip/Flip Vertical/{46B46847-34FF-41F1-97EE-E8168019A58F}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Rotate/{4E95AE8C-035F-4FE8-88EB-B980C66CDFC8}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Rotate/Rotate Left/{7D96E3D3-7D74-4115-BE85-F6E9860AB8D6}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Rotate/Rotate Right/{5FDE87BD-BE6B-47E6-B624-127DA47287C2}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Write/{663C6803-EE13-4A2D-AFE5-A4769477A019}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Media/AdvancedImager/Ribbon/Image/Write/Create Crop/{004D3060-AF53-4B5A-AFAA-3ABEAC90B55C}/invariant/0</x-item>
+        <x-item>/core/sitecore/layout/Layouts/Dialogs/Advanced Imager Save as/{9753EF8F-A1AF-47F9-AD35-77B6E3C79B9F}/invariant/0</x-item>
+        <x-item>/core/sitecore/layout/Layouts/Media/Advanced Imager/{11CB028B-CB2C-4561-8A75-48D97D3E6A67}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/{F6D36668-34B5-43A6-9A5B-CF96ACCAC8ED}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition Folder/__Standard Values/{CAB0DB8F-EAC4-493C-BF00-3AC025C1392A}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition Folder/{A19AA50E-BF5F-4864-A407-C4C5A442DB8D}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition/__Standard Values/{D18B3A9C-49E5-4059-A0EF-817A4E8CFD31}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition/{8B1D944D-5CCE-4C30-9964-16BF4391702C}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition/Crop Info/{B9910B97-C382-42F5-B649-1792AE7510D2}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition/Crop Info/Crop Purpose/{D4C73315-B86E-4110-B47D-E03E79B84656}/invariant/0</x-item>
+        <x-item>/core/sitecore/templates/Advanced Imager/Crop Definition/Crop Info/Crop Ratio/{99EF3C7E-CB67-43FE-BE49-758AF6D0385D}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Core Items</Name>
+    </xitems>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Include/zzFeature2/Feature.AdvancedImager.config</x-item>
+        <x-item>/bin/AdvancedImager.dll</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Files</Name>
+    </xfiles>
+    <xitems>
+      <Entries />
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms />
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name />
+    </xitems>
+    <xfiles>
+      <Entries />
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name />
+    </xfiles>
+    <files>
+      <Root>/sitecore/shell/Applications/Media/AdvancedImager</Root>
+      <Include>
+        <FileNameFilter>
+          <Pattern />
+          <AcceptDirectories>False</AcceptDirectories>
+        </FileNameFilter>
+        <FileDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <ActionDateTo />
+          <ActionDateFrom />
+          <NotOlderThan />
+        </FileDateFilter>
+        <FileDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <ActionDateTo />
+          <ActionDateFrom />
+          <NotOlderThan />
+        </FileDateFilter>
+      </Include>
+      <Exclude />
+      <Name>Sitecore Files</Name>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+    </files>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>
